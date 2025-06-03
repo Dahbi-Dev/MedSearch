@@ -1,20 +1,32 @@
 // src/posts/Post.jsx
 import React from "react";
-import AllPosts from "./AllPosts";
-
 
 const Post = ({ image, title, author, datePosted, description, location }) => {
-  return (
-    <div className="max-w-md mx-auto mb-6 border rounded-lg shadow p-4">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-48 object-cover rounded mb-4"
-      />
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="text-sm text-gray-600">Par <span className="font-medium">{author}</span> - {datePosted}</p>
-      <p className="text-gray-800 mt-2">{description}</p>
-      <p className="text-sm text-gray-500 mt-2">📍 {location}</p>
+   return (
+    <div className="w-80 bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div className="h-20 overflow-hidden">
+  <img
+    src={image}
+    alt={title}
+    className="w-full h-full object-cover"
+  />
+</div>
+
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 cursor-pointer transition-colors duration-200">
+          {title}
+        </h3>
+        <p className="mt-1 text-sm text-gray-500">
+          Par <span className="font-medium text-gray-700">{author}</span> •{" "}
+          <time dateTime={datePosted}>{datePosted}</time>
+        </p>
+        <p className="mt-2 text-gray-700 text-sm leading-relaxed">
+          {description}
+        </p>
+        <p className="mt-3 text-xs text-gray-500 flex items-center gap-1">
+          <span>📍</span> {location}
+        </p>
+      </div>
     </div>
   );
 };
