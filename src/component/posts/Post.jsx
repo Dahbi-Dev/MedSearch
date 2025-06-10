@@ -5,7 +5,7 @@ import AllPosts from "./AllPosts";
 
 const Post = ({ image, title, author, datePosted, description, location }) => {
   return (
-    <div className="max-w-md mx-auto mb-6 border rounded-lg shadow p-4">
+    <div className="max-w-md mx-auto mb-6 border rounded-lg shadow p-4 bg-gray-800">
       <img
         src={image}
         alt={title}
